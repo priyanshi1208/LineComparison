@@ -21,11 +21,26 @@ public class LineComparison {
 		  return Length;
 		 
 	}
-	public void equal(double Length1, double Length2)
+	
+	public void compare(double Length1, double Length2)
 	{
-		if(Length1==(Length2))
+		Double l1=new Double(Length1);
+		Double l2=new Double(Length2);
+		int res=l1.compareTo(l2);
+		if(res>0)
 		{
-			String message="The two lines are equal";
+			String message="Length 1 is greater than Length 2";
+			LOG.debug(message + " Will be printed on Debug");
+	        LOG.info(message + " Will be printed on Info");
+	        LOG.warn(message + " Will be printed on Warn");
+	        LOG.error(message + " Will be printed on Error");
+	        LOG.fatal(message + " Will be printed on Fatal");
+	        LOG.info("Appending string: {}.",message);
+	        System.out.println(message);
+		}
+		else if(res<0)
+		{
+			String message="Length 2 is greater than Length 1";
 			LOG.debug(message + " Will be printed on Debug");
 	        LOG.info(message + " Will be printed on Info");
 	        LOG.warn(message + " Will be printed on Warn");
@@ -36,7 +51,7 @@ public class LineComparison {
 		}
 		else
 		{
-			String message="The two lines are not equal";
+			String message="The two lines are equal";
 			LOG.debug(message + " Will be printed on Debug");
 	        LOG.info(message + " Will be printed on Info");
 	        LOG.warn(message + " Will be printed on Warn");
@@ -45,6 +60,7 @@ public class LineComparison {
 	        LOG.info("Appending string: {}.",message);
 	        System.out.println(message);
 		}	
+		
 	}
 	
 	public static void main(String[] args) 
@@ -62,7 +78,7 @@ public class LineComparison {
 		LineComparison lc=new LineComparison(); 
 		double Length1=lc.length(x1,y1,x2,y2);
 		double Length2=lc.length(X1, Y1, X2, Y2);
-		lc.equal(Length1,Length2);
+		lc.compare(Length1,Length2);
 		
 	}
 
