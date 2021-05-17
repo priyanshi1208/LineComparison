@@ -23,7 +23,9 @@ public class LineComparison {
 	}
 	public void equal(double Length1, double Length2)
 	{
-		if(Length1==(Length2))
+		Double l1=new Double(Length1);
+		Double l2=new Double(Length2);
+		if(l1.equals(l2))
 		{
 			String message="The two lines are equal";
 			LOG.debug(message + " Will be printed on Debug");
