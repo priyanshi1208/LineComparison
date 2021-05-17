@@ -8,10 +8,9 @@ import org.apache.logging.log4j.Logger;
 
 public class LineComparison {
 	private static final Logger LOG = LogManager.getLogger(App.class);
-	double Length;
-	public void length(int x1,int y1,int x2, int y2)
+	public double length(int x1,int y1,int x2, int y2)
 	{
-		  Length = Math.sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1));
+		  double Length = Math.sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1));
 		  LOG.debug(Length + " Will be printed on Debug");
 	        LOG.info(Length + " Will be printed on Info");
 	        LOG.warn(Length + " Will be printed on Warn");
@@ -19,7 +18,33 @@ public class LineComparison {
 	        LOG.fatal(Length + " Will be printed on Fatal");
 	        LOG.info("Appending string: {}.",Length);
 	        System.out.println(Length);
+		  return Length;
 		 
+	}
+	public void equal(double Length1, double Length2)
+	{
+		if(Length1==(Length2))
+		{
+			String message="The two lines are equal";
+			LOG.debug(message + " Will be printed on Debug");
+	        LOG.info(message + " Will be printed on Info");
+	        LOG.warn(message + " Will be printed on Warn");
+	        LOG.error(message + " Will be printed on Error");
+	        LOG.fatal(message + " Will be printed on Fatal");
+	        LOG.info("Appending string: {}.",message);
+	        System.out.println(message);
+		}
+		else
+		{
+			String message="The two lines are not equal";
+			LOG.debug(message + " Will be printed on Debug");
+	        LOG.info(message + " Will be printed on Info");
+	        LOG.warn(message + " Will be printed on Warn");
+	        LOG.error(message + " Will be printed on Error");
+	        LOG.fatal(message + " Will be printed on Fatal");
+	        LOG.info("Appending string: {}.",message);
+	        System.out.println(message);
+		}	
 	}
 	
 	public static void main(String[] args) 
@@ -29,8 +54,15 @@ public class LineComparison {
 		int y1=sc.nextInt();
 		int x2=sc.nextInt();
 		int y2=sc.nextInt();
+		int X1=sc.nextInt();
+		int Y1=sc.nextInt();
+		int X2=sc.nextInt();
+		int Y2=sc.nextInt();
+		
 		LineComparison lc=new LineComparison(); 
-		lc.length(x1,y1,x2,y2);
+		double Length1=lc.length(x1,y1,x2,y2);
+		double Length2=lc.length(X1, Y1, X2, Y2);
+		lc.equal(Length1,Length2);
 		
 	}
 
