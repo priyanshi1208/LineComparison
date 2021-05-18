@@ -16,6 +16,9 @@ public class LineComparison {
        	          System.out.println(Length);
 		 
 	}
+}
+class Main
+{
 	
 	public static void main(String[] args) 
 	{
