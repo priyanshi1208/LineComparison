@@ -15,11 +15,9 @@ public class LineComparison {
 		 
 	}
 	
-	public void compare(double Length1, double Length2)
+	public void compare(Double Length1, Double Length2)
 	{
-		Double l1=new Double(Length1);
-		Double l2=new Double(Length2);
-		int res=l1.compareTo(l2);
+		int res=Length1.compareTo(Length2);
 		if(res>0)
 		{
 			String message="Length 1 is greater than Length 2";
