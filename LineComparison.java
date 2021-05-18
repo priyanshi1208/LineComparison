@@ -7,7 +7,7 @@ import org.apache.logging.log4j.Logger;
 
 
 public class LineComparison {
-	private static final Logger LOG = LogManager.getLogger(App.class);
+	private static final Logger LOG = LogManager.getLogger(LineComparison.class);
 	public double length(int x1,int y1,int x2, int y2)
 	{
 		  double Length = Math.sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1));
@@ -22,25 +22,18 @@ public class LineComparison {
 		{
 			String message="The two lines are equal";
 			LOG.debug(message + " Will be printed on Debug");
-	        LOG.info(message + " Will be printed on Info");
-	        LOG.warn(message + " Will be printed on Warn");
-	        LOG.error(message + " Will be printed on Error");
-	        LOG.fatal(message + " Will be printed on Fatal");
-	        LOG.info("Appending string: {}.",message);
-	        System.out.println(message);
+	                System.out.println(message);
 		}
 		else
 		{
 			String message="The two lines are not equal";
 			LOG.debug(message + " Will be printed on Debug");
-	        LOG.info(message + " Will be printed on Info");
-	        LOG.warn(message + " Will be printed on Warn");
-	        LOG.error(message + " Will be printed on Error");
-	        LOG.fatal(message + " Will be printed on Fatal");
-	        LOG.info("Appending string: {}.",message);
-	        System.out.println(message);
+	                System.out.println(message);
 		}	
 	}
+}
+class Main
+{
 	
 	public static void main(String[] args) 
 	{
