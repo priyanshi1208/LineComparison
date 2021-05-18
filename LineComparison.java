@@ -14,11 +14,9 @@ public class LineComparison {
 		  return Length;
 		 
 	}
-	public void equal(double Length1, double Length2)
+	public void equal(Double Length1, Double Length2)
 	{
-		Double l1=new Double(Length1);
-		Double l2=new Double(Length2);
-		if(l1.equals(l2))
+		if(Length1.equals(Length2))
 		{
 			String message="The two lines are equal";
 			LOG.debug(message + " Will be printed on Debug");
